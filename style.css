@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 650px;
+  background-image: url(./img/hero-bac.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Testimonials {
+  margin-top: 80px;
+  background-color: #202b38;
+  height: 700px;
+  border-radius: 20px;
+}

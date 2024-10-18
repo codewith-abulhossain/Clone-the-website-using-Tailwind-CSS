@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            animation: {
+              "infinite-scroll": "infinite-scroll 25s linear infinite",
+            },
+            keyframes: {
+              "infinite-scroll": {
+                from: { transform: "translateX(0)" },
+                to: { transform: "translateX(-100%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <header class="">
+      <div class="top-bar bg-[#1A5EFF] p-2">
+        <h6 class="container mx-auto text-center font-semibold text-white">
+          Accepting 4 new clients. Get started now.
+        </h6>
+      </div>
+      <!-- nav Bar  -->
+      <div
+        class="container mx-auto navBar flex justify-between items-center p-4"
+      >
+        <div class="logo flex justify-between items-center">
+          <img src="./img/hero-logo.png" alt="" />
+          <p class="text-4xl font-bold ml-[-70px]">Rio</p>
+        </div>
+        <nav class="flex justify-between gap-4 font-bold">
+          <a href="#">Home</a>
+          <a href="#">About us</a>
+          <a href="#">Blog</a>
+        </nav>
+        <div>
+          <a
+            class="inline-block bg-[#1A5EFF] text-white rounded-xl border border-current px-8 py-3 text-sm font-bold text-indigo-600 transition hover:-rotate-2 hover:scale-110 focus:outline-none focus:ring active:text-indigo-500 md:block"
+            href="#"
+          >
+            Get started
+          </a>
+        </div>
+      </div>
+      <div>
+        <div
+          class="hero-title lg:w-[740px] mx-auto text-center md:w-[600px] sm:w-[350] md:mb-10 sm:mb-6"
+        >
+          <h1
+            class="lg:text-6xl md:text-4xl sm:text-2xl lg:font-bold md:font-semibold sm:font-medium"
+          >
+            Save time & <span class="text-[#1A5EFF]">work smarter</span> with AI
+            Automation
+          </h1>
+        </div>
+        <p
+          class="lg:w-[450px] mx-auto text-center md:w-[360px] sm:w-[250px] lg:text-[20px] md:text-[16px] md:mb-4"
+        >
+          We help you automate your workflows, automate repetitive tasks, and
+          elevate your business.
+        </p>
+        <div class="w-96 mx-auto text-center">
+          <button>
+            <a
+              class="group inline-block rounded-full bg-[#1A5EFF] p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
+              href="#"
+            >
+              <span
+                class="w-72 font-bold block rounded-full bg-[#1A5EFF] text-white px-8 py-3 text-sm font-medium group-hover:bg-transparent"
+              >
+                Book Your free Audit call
+              </span>
+            </a>
+          </button>
+        </div>
+      </div>
+      <div class="flex justify-start gap-4 items-center w-96 mx-auto mt-12">
+        <div class="flex justify-start">
+          <img src="./img/hero-cli1.png" class="w-16 h-16 rounded-full alt="" />
+          <img
+            src="./img/hero-cli2.png"
+            class="w-16 h-16 rounded-full"
+            alt=""
+          />
+          <img
+            src="./img/hero-cli3.png"
+            class="w-16 h-16 rounded-full"
+            alt=""
+          />
+        </div>
+        <div>
+          <a href="#" class="text-[#1A5EFF] font-bold"> 200+ happy clients!</a>
+          <p>Join them now -></p>
+        </div>
+      </div>
+      <div class="video max-w-[1080px] mx-auto">
+        <iframe
+          width="960"
+          height="400"
+          src="https://www.youtube.com/embed/QbFT7EnofZw?si=ofnLWn7pOdiLlCoV"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          class="mx-auto mt-12 aspect-ratio: 16/9 mb-24"
+        ></iframe>
+      </div>
+    </header>
+    <main>
+      <!-- carousel section -->
+      <section class="mt-[380px]">
+        <h2 class="text-2xl w-96 mx-auto text-center mb-12 font-bold">
+          Trusted by 40+ worldwide clients
+        </h2>
+        <!-- Logo Carousel animation -->
+        <div
+          x-data="{}"
+          x-init="$nextTick(() => {
+            let ul = $refs.logos;
+            ul.insertAdjacentHTML('afterend', ul.outerHTML);
+            ul.nextSibling.setAttribute('aria-hidden', 'true');
+        })"
+          class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+        >
+          <ul
+            x-ref="logos"
+            class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+          >
+            <li>
+              <img src="./img/c1.jpeg" alt="Facebook" />
+            </li>
+            <li>
+              <img src="./img/c2.jpeg" alt="Disney" />
+            </li>
+            <li>
+              <img src="./img/c3.jpeg" alt="Airbnb" />
+            </li>
+            <li>
+              <img src="./img/c4.jpeg" alt="Apple" />
+            </li>
+            <li>
+              <img src="./img/c1.jpeg" alt="Spark" />
+            </li>
+            <li><img src="./img/c2.jpeg alt="Samsung" /></li>
+            <li>
+              <img src="./img/c3.jpeg" alt="Quora" />
+            </li>
+            <li>
+              <img src="./img/c4.jpeg" alt="Sass" />
+            </li>
+          </ul>
+        </div>
+        <!-- End: Logo Carousel animation -->
+      </section>
+
+      <!-- service section  -->
+      <section class="container mx-auto">
+        <p
+          class="bg-slate-400 rounded-xl mt-24 w-28 mx-auto text-center font-bold p-2"
+        >
+          SERVICES
+        </p>
+        <h2
+          class="lg:w-[700px] mx-auto text-center md:w[550px] sm:w[400px] lg:text-6xl lg:font-bold md:text-4xl lg:font-semibold md:text-2xl"
+        >
+          <span class="text-[#1A5EFF]">AI-powered</span> automation services
+        </h2>
+        <!-- 4 cards -->
+        <div class="grid md:grid-cols-2 sm:grid-cols-1 mt-4 gap-4">
+          <article
+            class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
+          >
+            <div class="flex items-start sm:gap-8">
+              <div>
+                <div>
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 38 38"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="svg-540636924_1545"
+                  >
+                    <path
+                      d="M9.16752 23.8135C9.37718 23.7536 9.60225 23.7828 9.78966 23.8943C11.3658 24.8316 13.1662 25.3334 15.042 25.3334C20.7259 25.3334 25.3337 20.7257 25.3337 15.0417C25.3337 9.35782 20.7259 4.75008 15.042 4.75008C9.35806 4.75008 4.75032 9.35782 4.75032 15.0417C4.75032 16.9175 5.25214 18.7179 6.18948 20.2941C6.30093 20.4815 6.33015 20.7066 6.27025 20.9162L5.11134 24.9724L9.16752 23.8135ZM26.4083 11.5924C31.3643 13.0936 34.8337 17.6832 34.8337 22.9584C34.8337 25.003 34.3156 26.9733 33.3448 28.7197L34.8032 33.8243C34.9738 34.4215 34.4217 34.9736 33.8245 34.803L28.72 33.3445C26.9736 34.3153 25.0032 34.8334 22.9587 34.8334C17.6885 34.8334 13.0963 31.3701 11.5926 26.4079C10.7898 26.1646 10.0154 25.8363 9.28067 25.4279L4.17614 26.8863C3.57894 27.0569 3.02682 26.5048 3.19745 25.9076L4.65588 20.8031C3.68508 19.0567 3.16699 17.0863 3.16699 15.0417C3.16699 8.48337 8.4836 3.16675 15.042 3.16675C20.4007 3.16675 24.9304 6.71625 26.4083 11.5924ZM26.8057 13.4091C26.8791 13.9428 26.917 14.4879 26.917 15.0417C26.917 21.6001 21.6004 26.9167 15.042 26.9167C14.4914 26.9167 13.9463 26.8792 13.4094 26.8053C14.9536 30.6417 18.7011 33.2501 22.9587 33.2501C24.8344 33.2501 26.6348 32.7483 28.211 31.8109C28.3984 31.6995 28.6235 31.6703 28.8331 31.7302L32.8893 32.8891L31.7304 28.8329C31.6705 28.6232 31.6997 28.3981 31.8112 28.2107C32.7485 26.6346 33.2503 24.8342 33.2503 22.9584C33.2503 18.6971 30.6377 14.9515 26.8057 13.4091Z"
+                      fill="#1A5EFF"
+                    ></path>
+                  </svg>
+                </div>
+
+                <h3 class="mt-4 text-lg font-medium sm:text-xl">
+                  <a href="#" class="hover:underline">
+                    Customer Support Chatbots
+                  </a>
+                </h3>
+
+                <p class="mt-1 text-sm text-gray-700">
+                  Streamline operations and enhance productivity with AI-driven
+                  automation.
+                </p>
+
+                <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                  <div class="flex items-center gap-1 text-gray-500">
+                    <div class="flex justify-start gap-2 items-center">
+                      <p class="text-xl font-medium">Learn more</p>
+                      <p>
+                        <img
+                          src="./img/ra.jpeg"
+                          alt=""
+                          class="bg-white rounded-full w-8 h-8"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article
+            class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
+          >
+            <div class="flex items-start sm:gap-8">
+              <div>
+                <div>
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 38 38"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="svg-1926269318_1937"
+                  >
+                    <path
+                      d="M14.1758 28.4758C13.8185 30.2946 12.2154 31.6667 10.2918 31.6667H7.12513C6.6879 31.6667 6.33346 31.3123 6.33346 30.875V27.7084C6.33346 25.7848 7.70555 24.1817 9.52439 23.8244L9.54311 23.2816C9.57476 22.3639 9.66927 21.4631 9.82237 20.5834H3.95846C3.39839 20.5834 3.01541 20.0177 3.22342 19.4977L6.39009 11.581C6.51031 11.2805 6.80141 11.0834 7.12513 11.0834H14.2501C14.2903 11.0834 14.3298 11.0864 14.3684 11.0922C18.0962 6.84236 23.6309 4.23857 29.7213 4.44859C30.6882 4.48193 31.6513 4.58711 32.6026 4.76328C32.925 4.82298 33.1772 5.07519 33.2369 5.39756C34.5361 12.4132 31.9079 19.2468 26.9084 23.6346C26.9139 23.6723 26.9168 23.7108 26.9168 23.75V30.875C26.9168 31.1988 26.7197 31.4899 26.4191 31.6101L18.5025 34.7768C17.9825 34.9848 17.4168 34.6018 17.4168 34.0417V28.1754C16.5251 28.3317 15.6235 28.4259 14.7186 28.4571L14.1758 28.4758ZM12.647 28.0165L9.98368 25.3532C8.81757 25.5042 7.9168 26.5011 7.9168 27.7084V30.0834H10.2918C11.4991 30.0834 12.4959 29.1826 12.647 28.0165ZM19.0001 27.8303V32.8724L25.3335 30.3391V24.8793C23.4618 26.2075 21.3298 27.2216 19.0001 27.8303ZM10.1664 19C10.77 16.6907 11.7842 14.5532 13.1239 12.6667H7.66111L5.12778 19H10.1664ZM13.775 26.9053L14.664 26.8747C15.5525 26.844 16.4374 26.7474 17.3115 26.5855C26.8696 24.8155 33.2434 15.77 31.7721 6.2283C31.075 6.1212 30.372 6.05529 29.6668 6.03098C19.7681 5.68964 11.4668 13.4374 11.1255 23.3362L11.0948 24.2252L13.775 26.9053ZM22.1668 20.5834C19.5434 20.5834 17.4168 18.4567 17.4168 15.8334C17.4168 13.21 19.5434 11.0834 22.1668 11.0834C24.7901 11.0834 26.9168 13.21 26.9168 15.8334C26.9168 18.4567 24.7901 20.5834 22.1668 20.5834ZM22.1668 19C23.9157 19 25.3335 17.5823 25.3335 15.8334C25.3335 14.0845 23.9157 12.6667 22.1668 12.6667C20.4179 12.6667 19.0001 14.0845 19.0001 15.8334C19.0001 17.5823 20.4179 19 22.1668 19Z"
+                      fill="#1A5EFF"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="mt-4 text-lg font-medium sm:text-xl">
+                  <a href="#" class="hover:underline"> Workflow Automations </a>
+                </h3>
+
+                <p class="mt-1 text-sm text-gray-700">
+                  Cut down on manual labor costs through efficient and precise
+                  automated processes.
+                </p>
+
+                <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                  <div class="flex items-center gap-1 text-gray-500">
+                    <div class="flex justify-start gap-2 items-center">
+                      <p class="text-xl font-medium">Learn more</p>
+                      <p>
+                        <img
+                          src="./img/ra.jpeg"
+                          alt=""
+                          class="bg-white rounded-full w-8 h-8"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article
+            class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
+          >
+            <div class="flex items-start sm:gap-8">
+              <div>
+                <div>
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 38 38"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="svg1301945708_1622"
+                  >
+                    <path
+                      d="M4.7513 11.7023V15.8333C4.7513 16.3774 6.10289 17.2183 8.56671 17.8667C11.2985 18.5856 15.0217 19 19.0013 19C22.9809 19 26.7041 18.5856 29.4359 17.8667C31.8997 17.2183 33.2513 16.3774 33.2513 15.8333V11.7023C30.6964 13.304 25.308 14.25 19.0013 14.25C12.6946 14.25 7.30623 13.304 4.7513 11.7023ZM3.16797 9.5C3.16797 6.59738 10.188 4.75 19.0013 4.75C27.8146 4.75 34.8346 6.59738 34.8346 9.5V28.5C34.8346 31.4026 27.8146 33.25 19.0013 33.25C10.188 33.25 3.16797 31.4026 3.16797 28.5V9.5ZM33.2513 18.0357C30.6964 19.6374 25.308 20.5833 19.0013 20.5833C12.6946 20.5833 7.30623 19.6374 4.7513 18.0357V22.1667C4.7513 22.7107 6.10289 23.5517 8.56671 24.2C11.2985 24.9189 15.0217 25.3333 19.0013 25.3333C22.9809 25.3333 26.7041 24.9189 29.4359 24.2C31.8997 23.5517 33.2513 22.7107 33.2513 22.1667V18.0357ZM33.2513 24.369C30.6964 25.9707 25.308 26.9167 19.0013 26.9167C12.6946 26.9167 7.30623 25.9707 4.7513 24.369V28.5C4.7513 29.0441 6.10289 29.885 8.56671 30.5334C11.2985 31.2522 15.0217 31.6667 19.0013 31.6667C22.9809 31.6667 26.7041 31.2522 29.4359 30.5334C31.8997 29.885 33.2513 29.0441 33.2513 28.5V24.369ZM19.0013 12.6667C22.9809 12.6667 26.7041 12.2522 29.4359 11.5334C31.8997 10.885 33.2513 10.0441 33.2513 9.5C33.2513 8.95593 31.8997 8.11501 29.4359 7.46664C26.7041 6.74775 22.9809 6.33333 19.0013 6.33333C15.0217 6.33333 11.2985 6.74775 8.56671 7.46664C6.10289 8.11501 4.7513 8.95593 4.7513 9.5C4.7513 10.0441 6.10289 10.885 8.56671 11.5334C11.2985 12.2522 15.0217 12.6667 19.0013 12.6667Z"
+                      fill="#1A5EFF"
+                    ></path>
+                  </svg>
+                </div>
+
+                <h3 class="mt-4 text-lg font-medium sm:text-xl">
+                  <a href="#" class="hover:underline">
+                    Chatbots for Internal Use
+                  </a>
+                </h3>
+
+                <p class="mt-1 text-sm text-gray-700">
+                  Automate tasks to ensure your business operates seamlessly
+                  around the clock.
+                </p>
+
+                <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                  <div class="flex items-center gap-1 text-gray-500">
+                    <div class="flex justify-start gap-2 items-center">
+                      <p class="text-xl font-medium">Learn more</p>
+                      <p>
+                        <img
+                          src="./img/ra.jpeg"
+                          alt=""
+                          class="bg-white rounded-full w-8 h-8"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article
+            class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
+          >
+            <div class="flex items-start sm:gap-8">
+              <div>
+                <div>
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 38 38"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="svg-1534986543_2311"
+                  >
+                    <path
+                      d="M29.2917 14.2499C30.615 14.2499 31.6783 13.1866 31.6783 11.8749V10.2916C31.6783 8.97991 30.615 7.91659 29.3033 7.91659H8.70833C7.39666 7.91659 6.33333 8.97991 6.33333 10.2916V11.8749C6.33333 13.1866 7.39666 14.2499 8.70833 14.2499H29.2917ZM4.75 26.1249C4.75 23.9388 6.52221 22.1666 8.70833 22.1666H29.3033C31.4894 22.1666 33.2616 23.9388 33.2616 26.1249V27.7083C33.2616 29.8944 31.4894 31.6666 29.3033 31.6666H8.70833C6.52221 31.6666 4.75 29.8944 4.75 27.7083V26.1249ZM6.33295 15.0416C5.37173 14.3194 4.75 13.1698 4.75 11.8749V10.2916C4.75 8.10546 6.52221 6.33325 8.70833 6.33325H29.3033C31.4894 6.33325 33.2616 8.10546 33.2616 10.2916V11.8749C33.2616 13.1698 32.6399 14.3194 31.6787 15.0416C32.6399 15.7638 33.2616 16.9134 33.2616 18.2083V19.7916C33.2616 21.9777 31.4894 23.7499 29.3033 23.7499C28.8544 23.7499 28.5 23.3955 28.5 22.9583C28.5 22.521 28.8544 22.1666 29.2917 22.1666C30.615 22.1666 31.6783 21.1033 31.6783 19.7916V18.2083C31.6783 16.8966 30.615 15.8333 29.3033 15.8333H8.70833C7.39666 15.8333 6.33333 16.8966 6.33333 18.2083V19.7916C6.33333 21.1033 7.39666 22.1666 8.70833 22.1666C9.14556 22.1666 9.5 22.521 9.5 22.9583C9.5 23.3955 9.14556 23.7499 8.70833 23.7499C6.52221 23.7499 4.75 21.9777 4.75 19.7916V18.2083C4.75 16.9134 5.37173 15.7638 6.33295 15.0416ZM6.33333 26.1249V27.7083C6.33333 29.0199 7.39666 30.0833 8.70833 30.0833H29.3033C30.615 30.0833 31.6783 29.0199 31.6783 27.7083V26.1249C31.6783 24.8132 30.615 23.7499 29.3033 23.7499H8.70833C7.39666 23.7499 6.33333 24.8132 6.33333 26.1249ZM8.70833 12.6666C8.27111 12.6666 7.91667 12.3121 7.91667 11.8749C7.91667 11.4377 8.27111 11.0833 8.70833 11.0833H11.875C12.3122 11.0833 12.6667 11.4377 12.6667 11.8749C12.6667 12.3121 12.3122 12.6666 11.875 12.6666H8.70833ZM8.70833 20.5833C8.27111 20.5833 7.91667 20.2288 7.91667 19.7916C7.91667 19.3544 8.27111 18.9999 8.70833 18.9999H11.875C12.3122 18.9999 12.6667 19.3544 12.6667 19.7916C12.6667 20.2288 12.3122 20.5833 11.875 20.5833H8.70833ZM8.70833 28.4999C8.27111 28.4999 7.91667 28.1455 7.91667 27.7083C7.91667 27.271 8.27111 26.9166 8.70833 26.9166H11.875C12.3122 26.9166 12.6667 27.271 12.6667 27.7083C12.6667 28.1455 12.3122 28.4999 11.875 28.4999H8.70833Z"
+                      fill="#1A5EFF"
+                    ></path>
+                  </svg>
+                </div>
+
+                <h3 class="mt-4 text-lg font-medium sm:text-xl">
+                  <a href="#" class="hover:underline"> Custom GPTs </a>
+                </h3>
+
+                <p class="mt-1 text-sm text-gray-700">
+                  Harness the power of AI for in-depth analytics and informed
+                  decision-making.
+                </p>
+
+                <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                  <div class="flex items-center gap-1 text-gray-500">
+                    <div class="flex justify-start gap-2 items-center">
+                      <p class="text-xl font-medium">Learn more</p>
+                      <p>
+                        <img
+                          src="./img/ra.jpeg"
+                          alt=""
+                          class="bg-white rounded-full w-8 h-8"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- Content block section -->
+      <section class="container mx-auto mt-24">
+        <div class="md:flex md:justify-between gap-4">
+          <!-- Content block image -->
+          <div>
+            <p
+              class="w-[150px] rounded-xl mt-10 mb-6 p-2 text-[#1A5EFF] font-bold text-xl bg-gray-200"
+            >
+              Content block
+            </p>
+            <h2
+              class="md:w-[80%] sm:w-[60%] mt-12 md:text-5xl sm:text-2xl font-bold md:mb-6 sm:mb-4"
+            >
+              Workflows with our AI automation
+              <span class="text-[#1A5EFF]">expertise</span>
+            </h2>
+            <p class="md:w-[80%] sm:w-[70%] text-start mb-4 mt-12">
+              Revolutionize tasks, reduce errors, and boost efficiency with
+              intelligent technology, streamlining operations for unparalleled
+              productivity.
+            </p>
+            <p class="mt-8 text-xl font-bold">Functional sections</p>
+            <p class="mt-4 text-xl font-bold">Easy to customize</p>
+            <button
+              class="bg-[#1A5EFF] p-4 rounded-xl text-white font-semibold mt-12"
+            >
+              Book Your free Audit Call
+            </button>
+          </div>
+          <!-- Content block content -->
+          <div><img src="./img/Contentblock.png" alt="" /></div>
+        </div>
+      </section>
+
+      <!-- 2nd Content block section -->
+      <section class="container mx-auto mt-32">
+        <div class="md:flex md:justify-between gap-12">
+          <!-- image -->
+          <div><img src="./img/card2.png" alt="" /></div>
+          <!-- content -->
+          <div>
+            <p
+              class="w-[150px] rounded-xl mt-6 mb-6 p-2 text-[#1A5EFF] font-bold text-xl bg-gray-200"
+            >
+              Content block
+            </p>
+            <h2
+              class="md:w-[100%] sm:w-[60%] mt-4 md:text-5xl sm:text-2xl font-bold md:mb-6 sm:mb-4"
+            >
+              Harnessing AI for business success
+            </h2>
+            <div>
+              <div
+                class="w-[100%] h-28 flex justify-between items-center gap-4 bg-gray-200 rounded-xl p-4"
+              >
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    color="var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255))"
+                    class=""
+                    style="
+                      user-select: none;
+                      width: 40%;
+                      height: 100%;
+                      display: inline-block;
+                      fill: var(
+                        --token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78,
+                        rgb(26, 94, 255)
+                      );
+                      flex-shrink: 0;
+                    "
+                  >
+                    <path
+                      d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 2v9h-3.56c-.36 0-.68.19-.86.5-.52.9-1.47 1.5-2.58 1.5s-2.06-.6-2.58-1.5c-.18-.31-.51-.5-.86-.5H5V5h14z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <p>
+                    Boost efficiency and cut costs with AI-powered automation
+                  </p>
+                </div>
+                <div>
+                  <svg
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="svg-672674624_452"
+                  >
+                    <rect
+                      x="1.3457"
+                      y="1.2998"
+                      width="32.1548"
+                      height="31.4006"
+                      rx="15.7003"
+                      fill="#F6F6F7"
+                    ></rect>
+                    <rect
+                      x="1.3457"
+                      y="1.2998"
+                      width="32.1548"
+                      height="31.4006"
+                      rx="15.7003"
+                      stroke="#414344"
+                    ></rect>
+                    <path
+                      d="M17.8002 23.2004L16.4835 21.8964L20.4274 17.9525H10.8457V16.0477H20.4274L16.4835 12.1102L17.8002 10.7998L24.0005 17.0001L17.8002 23.2004Z"
+                      fill="#414344"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="w-[100%] h-28 flex justify-between items-center gap-4 bg-gray-200 rounded-xl p-4 mt-4"
+              >
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    color="var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255))"
+                    style="
+                      user-select: none;
+                      width: 40%;
+                      height: 100%;
+                      display: inline-block;
+                      fill: var(
+                        --token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78,
+                        rgb(26, 94, 255)
+                      );
+                      flex-shrink: 0;
+                    "
+                  >
+                    <path
+                      d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <p>
+                    Optimize operations, minimize errors, and save resources
+                  </p>
+                </div>
+                <div>
+                  <svg
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="svg-672674624_452"
+                  >
+                    <rect
+                      x="1.3457"
+                      y="1.2998"
+                      width="32.1548"
+                      height="31.4006"
+                      rx="15.7003"
+                      fill="#F6F6F7"
+                    ></rect>
+                    <rect
+                      x="1.3457"
+                      y="1.2998"
+                      width="32.1548"
+                      height="31.4006"
+                      rx="15.7003"
+                      stroke="#414344"
+                    ></rect>
+                    <path
+                      d="M17.8002 23.2004L16.4835 21.8964L20.4274 17.9525H10.8457V16.0477H20.4274L16.4835 12.1102L17.8002 10.7998L24.0005 17.0001L17.8002 23.2004Z"
+                      fill="#414344"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <p class="w-[100%] mt-6 text-xl font-bold">
+              “Couldn’t be happier with the work the guys from XYZ Agency did
+              for us. Made sales 10x more efficient.”
+            </p>
+            <div class="flex justify-start gap-4 items-center mt-10">
+              <div>
+                <img src="./img/bb.jpg" alt="" class="w-16 h-16 rounded-full" />
+              </div>
+              <div>
+                <p class="font-bold text-xl">William James</p>
+                <p>CEO, XYZ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials section  -->
+      <section class="mt-32 container mx-auto">
+        <div>
+          <div class="w-24 mx-auto text-center items-center">
+            <p
+              class="w-[150px] rounded-xl mt-6 mb-6 p-2 text-[#1A5EFF] font-bold text-xl bg-gray-200"
+            >
+              Testimonials
+            </p>
+          </div>
+          <div>
+            <h2
+              class="w-[50%] mx-auto lg:text-6xl md:text-4xl text-center font-bold mb-12"
+            >
+              Leading the way in AI automation
+            </h2>
+          </div>
+          <div>
+            <!-- card -->
+            <!-- <div class="w-[30%] h-[250px] bg-gray-200 rounded-xl p-6">
+              <div>
+                <div class="flex justify-start gap-4 items-center">
+                  <div>
+                    <img
+                      src="./img/bb.jpg"
+                      alt=""
+                      class="w-16 h-16 rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <p class="font-bold text-xl">William James</p>
+                    <p>CEO, XYZ</p>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <p>
+                    "Our chatbot has taken over more than 60% of our support
+                    tickets, and customers are not even noticing they are
+                    talking to AI!"
+                  </p>
+                </div>
+                <div class="mt-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 144 22"
+                    id="svg551342822"
+                  >
+                    <path
+                      d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                      fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                    ></path>
+                    <path
+                      d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                      fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                    ></path>
+                    <path
+                      d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                      fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                    ></path>
+                    <path
+                      d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                      fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                    ></path>
+                    <path
+                      d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                      fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- Logo Carousel animation -->
+            <div
+              x-data="{}"
+              x-init="$nextTick(() => {
+                  let ul = $refs.logos;
+                  ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                  ul.nextSibling.setAttribute('aria-hidden', 'true');
+                 })"
+              class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+            >
+              <ul
+                x-ref="logos"
+                class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+              >
+                <li>
+                  <div class="w-[100%] h-[250px] bg-gray-200 rounded-xl p-6">
+                    <div>
+                      <div class="flex justify-start gap-4 items-center">
+                        <div>
+                          <img
+                            src="./img/bb.jpg"
+                            alt=""
+                            class="w-16 h-16 rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-bold text-xl">William James</p>
+                          <p>CEO, XYZ</p>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <p>
+                          "Our chatbot has taken over more than 60% of our
+                          support tickets, and customers are not even noticing
+                          they are talking to AI!"
+                        </p>
+                      </div>
+                      <div class="mt-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 144 22"
+                          id="svg551342822"
+                        >
+                          <path
+                            d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="w-[100%] h-[250px] bg-gray-200 rounded-xl p-6">
+                    <div>
+                      <div class="flex justify-start gap-4 items-center">
+                        <div>
+                          <img
+                            src="./img/bb.jpg"
+                            alt=""
+                            class="w-16 h-16 rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-bold text-xl">William James</p>
+                          <p>CEO, XYZ</p>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <p>
+                          "Our chatbot has taken over more than 60% of our
+                          support tickets, and customers are not even noticing
+                          they are talking to AI!"
+                        </p>
+                      </div>
+                      <div class="mt-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 144 22"
+                          id="svg551342822"
+                        >
+                          <path
+                            d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="w-[100%] h-[250px] bg-gray-200 rounded-xl p-6">
+                    <div>
+                      <div class="flex justify-start gap-4 items-center">
+                        <div>
+                          <img
+                            src="./img/bb.jpg"
+                            alt=""
+                            class="w-16 h-16 rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-bold text-xl">William James</p>
+                          <p>CEO, XYZ</p>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <p>
+                          "Our chatbot has taken over more than 60% of our
+                          support tickets, and customers are not even noticing
+                          they are talking to AI!"
+                        </p>
+                      </div>
+                      <div class="mt-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 144 22"
+                          id="svg551342822"
+                        >
+                          <path
+                            d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="w-[100%] h-[250px] bg-gray-200 rounded-xl p-6">
+                    <div>
+                      <div class="flex justify-start gap-4 items-center">
+                        <div>
+                          <img
+                            src="./img/bb.jpg"
+                            alt=""
+                            class="w-16 h-16 rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-bold text-xl">William James</p>
+                          <p>CEO, XYZ</p>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <p>
+                          "Our chatbot has taken over more than 60% of our
+                          support tickets, and customers are not even noticing
+                          they are talking to AI!"
+                        </p>
+                      </div>
+                      <div class="mt-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 144 22"
+                          id="svg551342822"
+                        >
+                          <path
+                            d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="w-[100%] h-[250px] bg-gray-200 rounded-xl p-6">
+                    <div>
+                      <div class="flex justify-start gap-4 items-center">
+                        <div>
+                          <img
+                            src="./img/bb.jpg"
+                            alt=""
+                            class="w-16 h-16 rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-bold text-xl">William James</p>
+                          <p>CEO, XYZ</p>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <p>
+                          "Our chatbot has taken over more than 60% of our
+                          support tickets, and customers are not even noticing
+                          they are talking to AI!"
+                        </p>
+                      </div>
+                      <div class="mt-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 144 22"
+                          id="svg551342822"
+                        >
+                          <path
+                            d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="w-[100%] h-[250px] bg-gray-200 rounded-xl p-6">
+                    <div>
+                      <div class="flex justify-start gap-4 items-center">
+                        <div>
+                          <img
+                            src="./img/bb.jpg"
+                            alt=""
+                            class="w-16 h-16 rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-bold text-xl">William James</p>
+                          <p>CEO, XYZ</p>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <p>
+                          "Our chatbot has taken over more than 60% of our
+                          support tickets, and customers are not even noticing
+                          they are talking to AI!"
+                        </p>
+                      </div>
+                      <div class="mt-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 144 22"
+                          id="svg551342822"
+                        >
+                          <path
+                            d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="w-[100%] h-[250px] bg-gray-200 rounded-xl p-6">
+                    <div>
+                      <div class="flex justify-start gap-4 items-center">
+                        <div>
+                          <img
+                            src="./img/bb.jpg"
+                            alt=""
+                            class="w-16 h-16 rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-bold text-xl">William James</p>
+                          <p>CEO, XYZ</p>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <p>
+                          "Our chatbot has taken over more than 60% of our
+                          support tickets, and customers are not even noticing
+                          they are talking to AI!"
+                        </p>
+                      </div>
+                      <div class="mt-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 144 22"
+                          id="svg551342822"
+                        >
+                          <path
+                            d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="w-[100%] h-[250px] bg-gray-200 rounded-xl p-6">
+                    <div>
+                      <div class="flex justify-start gap-4 items-center">
+                        <div>
+                          <img
+                            src="./img/bb.jpg"
+                            alt=""
+                            class="w-16 h-16 rounded-full"
+                          />
+                        </div>
+                        <div>
+                          <p class="font-bold text-xl">William James</p>
+                          <p>CEO, XYZ</p>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <p>
+                          "Our chatbot has taken over more than 60% of our
+                          support tickets, and customers are not even noticing
+                          they are talking to AI!"
+                        </p>
+                      </div>
+                      <div class="mt-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 144 22"
+                          id="svg551342822"
+                        >
+                          <path
+                            d="M 12 0 L 14.694 8.292 L 23.413 8.292 L 16.359 13.416 L 19.053 21.708 L 12 16.584 L 4.947 21.708 L 7.641 13.416 L 0.587 8.292 L 9.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 42 0 L 44.694 8.292 L 53.413 8.292 L 46.359 13.416 L 49.053 21.708 L 42 16.584 L 34.947 21.708 L 37.641 13.416 L 30.587 8.292 L 39.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 72 0 L 74.694 8.292 L 83.413 8.292 L 76.359 13.416 L 79.053 21.708 L 72 16.584 L 64.947 21.708 L 67.641 13.416 L 60.587 8.292 L 69.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 102 0 L 104.694 8.292 L 113.413 8.292 L 106.359 13.416 L 109.053 21.708 L 102 16.584 L 94.947 21.708 L 97.641 13.416 L 90.587 8.292 L 99.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                          <path
+                            d="M 132 0 L 134.694 8.292 L 143.413 8.292 L 136.359 13.416 L 139.053 21.708 L 132 16.584 L 124.947 21.708 L 127.641 13.416 L 120.587 8.292 L 129.306 8.292 Z"
+                            fill='var(--token-aef216eb-ea0a-4bfa-8e05-dbdd54108c78, rgb(26, 94, 255)) /* {"name":"Accent"} */'
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- End: Logo Carousel animation -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Process section -->
+      <section class="container mx-auto mt-32">
+        <div class="flex justify-between gap-4">
+          <!-- content -->
+          <div class="sticky">
+            <p
+              class="w-[150px] rounded-xl mt-6 mb-6 p-2 text-[#1A5EFF] font-bold text-xl bg-gray-200"
+            >
+              Process
+            </p>
+            <h2 class="lg:text-6xl md:text-4xl font-bold mb-6">
+              How to get started
+            </h2>
+            <p class="w-[60%] text-xl">
+              Unleash the power of AI automation to transform routine processes,
+              ensuring precision, 24/7 availability, and significant cost
+              savings.
+            </p>
+            <button
+              class="bg-[#1A5EFF] p-4 rounded-xl text-white font-semibold mt-12"
+            >
+              Book Your free Audit Call
+            </button>
+          </div>
+          <!-- 3 cards -->
+          <div class="">
+            <!-- 1st card -->
+
+            <article
+              class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8 mb-4"
+            >
+              <div class="flex items-start sm:gap-8">
+                <div>
+                  <div>01</div>
+
+                  <h3 class="mt-4 text-lg font-medium sm:text-xl">
+                    <a href="#" class="hover:underline">
+                      Book a discovery call
+                    </a>
+                  </h3>
+
+                  <p class="mt-1 text-sm text-gray-700">
+                    Book your free discovery call by clicking one of the buttons
+                    on this page.
+                  </p>
+
+                  <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                    <div class="flex items-center gap-1 text-gray-500">
+                      <div class="flex justify-start gap-2 items-center">
+                        <p class="text-xl font-medium">Get Started</p>
+                        <p>
+                          <img
+                            src="./img/ra.jpeg"
+                            alt=""
+                            class="bg-white rounded-full w-8 h-8"
+                          />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article
+              class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8 mb-4"
+            >
+              <div class="flex items-start sm:gap-8">
+                <div>
+                  <div>02</div>
+
+                  <h3 class="mt-4 text-lg font-medium sm:text-xl">
+                    <a href="#" class="hover:underline">
+                      Book a discovery call
+                    </a>
+                  </h3>
+
+                  <p class="mt-1 text-sm text-gray-700">
+                    Book your free discovery call by clicking one of the buttons
+                    on this page.
+                  </p>
+
+                  <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                    <div class="flex items-center gap-1 text-gray-500">
+                      <div class="flex justify-start gap-2 items-center">
+                        <p class="text-xl font-medium">Get Started</p>
+                        <p>
+                          <img
+                            src="./img/ra.jpeg"
+                            alt=""
+                            class="bg-white rounded-full w-8 h-8"
+                          />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article
+              class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
+            >
+              <div class="flex items-start sm:gap-8">
+                <div>
+                  <div>03</div>
+
+                  <h3 class="mt-4 text-lg font-medium sm:text-xl">
+                    <a href="#" class="hover:underline">
+                      Book a discovery call
+                    </a>
+                  </h3>
+
+                  <p class="mt-1 text-sm text-gray-700">
+                    Book your free discovery call by clicking one of the buttons
+                    on this page.
+                  </p>
+
+                  <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                    <div class="flex items-center gap-1 text-gray-500">
+                      <div class="flex justify-start gap-2 items-center">
+                        <p class="text-xl font-medium">Get Started</p>
+                        <p>
+                          <img
+                            src="./img/ra.jpeg"
+                            alt=""
+                            class="bg-white rounded-full w-8 h-8"
+                          />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article
+              class="rounded-xl bg-white p-4 ring ring-indigo-50 sm:p-6 lg:p-8"
+            >
+              <div class="flex items-start sm:gap-8">
+                <div>
+                  <div>04</div>
+
+                  <h3 class="mt-4 text-lg font-medium sm:text-xl">
+                    <a href="#" class="hover:underline">
+                      Book a discovery call
+                    </a>
+                  </h3>
+
+                  <p class="mt-1 text-sm text-gray-700">
+                    Book your free discovery call by clicking one of the buttons
+                    on this page.
+                  </p>
+
+                  <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                    <div class="flex items-center gap-1 text-gray-500">
+                      <div class="flex justify-start gap-2 items-center">
+                        <p class="text-xl font-medium">Get Started</p>
+                        <p>
+                          <img
+                            src="./img/ra.jpeg"
+                            alt=""
+                            class="bg-white rounded-full w-8 h-8"
+                          />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing section  -->
+
+      <section class="container mx-auto mt-32">
+        <div class="w-[450px] mx-auto text-center">
+          <p
+            class="w-[150px] mx-auto items-center text-center rounded-xl mt-6 mb-6 p-2 text-[#1A5EFF] font-bold text-xl bg-gray-200"
+          >
+            Pricing
+          </p>
+          <h2 class="md:text-4xl font-bold">Plans to Fit Your Business</h2>
+          <div
+            class="w-32 mx-auto flex justify-start gap-4 items-center text-center mb-12 mt-6"
+          >
+            <h6 class="text-xl font-bold">Monthly</h6>
+            <div class="w-4 h-4 rounded-full bg-blue-900"></div>
+            <h6 class="text-xl font-bold">Yearly</h6>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <!-- card 1 -->
+          <div class="w-[30%] h-[600px] bg-gray-400 rounded-xl p-2">
+            <div class="w-[95%] mx-auto h-[300px] bg-white rounded-xl p-2">
+              <p class="text-2xl font-bold">Pro</p>
+              <h2 class="text-6xl font-bold mt-2">$199/m</h2>
+              <p class="text-2xl font-bold mt-4 mb-4">Price breakdown here</p>
+              <button
+                class="text-2xl font-bold bg-blue-700 px-24 rounded-xl py-2 mb-4"
+              >
+                Get Started
+              </button>
+              <p class="text-xl font-bold">Got questions? Talk to an expert.</p>
+            </div>
+            <div class="flex gap-2 mt-6 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <!-- + -->
+            <div
+              class="flex mt-4 text-2xl bg-white justify-between rounded-xl p-2"
+            >
+              <p>Optional add-ons</p>
+              <p>+</p>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div class="w-[30%] h-[600px] bg-gray-400 rounded-xl p-2">
+            <div class="w-[95%] mx-auto h-[300px] bg-white rounded-xl p-2">
+              <p class="text-2xl font-bold">
+                Pro
+                <span class="bg-blue-700 p-2 rounded-xl text-white">
+                  Popular</span
+                >
+              </p>
+              <h2 class="text-6xl font-bold mt-2">$599/m</h2>
+              <p class="text-2xl font-bold mt-4 mb-4">Price breakdown here</p>
+              <button
+                class="text-2xl font-bold bg-blue-700 px-24 rounded-xl py-2 mb-4"
+              >
+                Get Started
+              </button>
+              <p class="text-xl font-bold">Got questions? Talk to an expert.</p>
+            </div>
+            <div class="flex gap-2 mt-6 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <!-- + -->
+            <div
+              class="flex mt-4 text-2xl bg-white justify-between rounded-xl p-2"
+            >
+              <p>Optional add-ons</p>
+              <p>+</p>
+            </div>
+          </div>
+          <!-- card 3 -->
+          <div class="w-[30%] h-[600px] bg-gray-400 rounded-xl p-2">
+            <div class="w-[95%] mx-auto h-[300px] bg-white rounded-xl p-2">
+              <p class="text-2xl font-bold">Premium</p>
+              <h2 class="text-6xl font-bold mt-2">$499/m</h2>
+              <p class="text-2xl font-bold mt-4 mb-4">Price breakdown here</p>
+              <button
+                class="text-2xl font-bold bg-blue-700 px-20 rounded-xl py-2 mb-4"
+              >
+                Get Started
+              </button>
+              <p class="text-xl font-bold">Got questions? Talk to an expert.</p>
+            </div>
+            <div class="flex gap-2 mt-6 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <div class="flex gap-2 mt-4 pl-6">
+              <p>
+                <svg
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="svg-1782195943_711"
+                >
+                  <path
+                    d="M12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5ZM12 21.5C16.9706 21.5 21 17.4706 21 12.5C21 7.52944 16.9706 3.5 12 3.5C7.02944 3.5 3 7.52944 3 12.5C3 17.4706 7.02944 21.5 12 21.5ZM15.1464 9.64645C15.3417 9.45118 15.6583 9.45118 15.8536 9.64645C16.0488 9.84171 16.0488 10.1583 15.8536 10.3536L10.8536 15.3536C10.6583 15.5488 10.3417 15.5488 10.1464 15.3536L8.14645 13.3536C7.95118 13.1583 7.95118 12.8417 8.14645 12.6464C8.34171 12.4512 8.65829 12.4512 8.85355 12.6464L10.5 14.2929L15.1464 9.64645Z"
+                    fill="#202738"
+                  ></path>
+                </svg>
+              </p>
+              <p>Feature here</p>
+            </div>
+            <!-- + -->
+            <div
+              class="flex mt-4 text-2xl bg-white justify-between rounded-xl p-2"
+            >
+              <p>Optional add-ons</p>
+              <p>+</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="container mx-auto">
+        <div>
+          <p
+            class="w-[150px] mx-auto items-center text-center rounded-xl mt-6 mb-6 p-2 text-[#1A5EFF] font-bold text-xl bg-gray-200"
+          >
+            FAQ
+          </p>
+          <h2
+            class="w-[700px] mx-auto font-bold text-6xl text-center items-center"
+          >
+            You’ve got questions, we’ve got
+            <span class="text-blue-800">answers</span>
+          </h2>
+        </div>
+        <div>
+          <div
+            class="flex justify-between bg-indigo-300 w-[600px] mx-auto mt-6 p-4 border rounded-xl"
+          >
+            <p>
+              How can i tell if using Ai is the right solution for my problem?
+            </p>
+            <p>+</p>
+          </div>
+          <div
+            class="flex justify-between bg-indigo-300 w-[600px] mx-auto mt-6 p-4 border rounded-xl"
+          >
+            <p>How long does an Ai solution take to implement?</p>
+            <p>+</p>
+          </div>
+          <div
+            class="flex justify-between bg-indigo-300 w-[600px] mx-auto mt-6 p-4 border rounded-xl"
+          >
+            <p>Will we need to make changes in our teams?</p>
+            <p>+</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials section -->
+      <section class="container mx-auto">
+        <div class="Testimonials">
+          <div>
+            <div class="pt-16">
+              <h6
+                class="w-32 mx-auto text-center font-bold bg-gray-400 p-2 rounded-xl text-xl text-white"
+              >
+                Testimonials
+              </h6>
+            </div>
+            <div class="w-[700px] mx-auto text-center mt-6">
+              <h2 class="text-6xl text-white font-bold">
+                Ready to <span class="text-blue-800">Get Started?</span>
+              </h2>
+            </div>
+            <p
+              class="w-[600px] mx-auto text-center text-white text-xl p-4 mt-6"
+            >
+              Experience the future of business operations with AI
+              automation—increased speed, accuracy, and adaptability, driving
+              overall productivity gains.
+            </p>
+            <div
+              class="w-72 rounded-xl p-4 text-white mx-auto text-center bg-blue-900 mt-10"
+            >
+              <button class="font-bold">Book Your Free Audit Call</button>
+            </div>
+          </div>
+
+          <!-- social link  -->
+          <div class="flex justify-between mt-12 items-center text-center">
+            <div class="w-[30%] flex justify-start mx-auto">
+              <div
+                class="w-12 h-12 bg-white rounded-full text-center items-center flex justify-center"
+              >
+                FB
+              </div>
+              <div
+                class="w-12 h-12 bg-white rounded-full text-center items-center flex justify-center"
+              >
+                LI
+              </div>
+              <div
+                class="w-12 h-12 bg-white rounded-full text-center items-center flex justify-center"
+              >
+                IG
+              </div>
+            </div>
+            <div class="flex justify-start flex-col items-center text-center">
+              <div>
+                <img src="./img/hero-logo.png" alt="" />
+              </div>
+              <div>
+                <p class="text-white mt-4">
+                  Build a powerful agency site with Framer.
+                </p>
+              </div>
+            </div>
+            <div class="w-[30%]">
+              <a class="text-white mr-4" href="#">About</a>
+              <a class="text-white mr-4" href="#">Contact</a>
+              <a class="text-white mr-4" href="#">Blog</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="container mx-auto py-12">
+        <div class="flex justify-between">
+          <p>© Mont Limited 2023. All rights reserved.</p>
+          <p>Designed by Wize</p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
